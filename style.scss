@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-area {
+  width: 100%;
+  height: 100vh;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main {
+    width: min(28em, 100%);
+    height: min(36em, 80%);
+    background-color: teal;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+
+    &__timer {
+      width: 100%;
+      height: 80%;
+      //   background-color: gainsboro;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5em;
+      .circle {
+        width: 20em;
+        height: 20em;
+        border-radius: 50%;
+        position: relative;
+
+        background: radial-gradient(white 60%, transparent 61%),
+          conic-gradient(transparent 0deg 0deg, gainsboro 0deg 360deg),
+          conic-gradient(orange 0deg, yellow 90deg, lightgreen 180deg, green);
+      }
+
+      h1 {
+        font-size: 5em;
+        position: absolute;
+      }
+      p {
+        display: none;
+        position: absolute;
+        font-size: 1em;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        line-height: 3em;
+        height: 3em;
+        width: 10em;
+        background-color: aquamarine;
+        top: calc(50% - 0.5em);
+        clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%, 10% 50%);
+      }
+    }
+    &__btns {
+      width: 100%;
+      height: 20%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1em;
+    }
+    &__modal {
+      position: absolute;
+      width: min(24em, 96%);
+      height: 30em;
+      top: calc(50% - 15em);
+      left: calc(50% - 12em);
+      border-radius: 0.5em;
+      background-color: #74b9ff;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+
+      div {
+        width: 90%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-weight: 700;
+        }
+        button {
+          background-color: #00b894;
+          color: white;
+
+          &:hover {
+            background-color: #218c74;
+          }
+        }
+
+        &:nth-child(4) {
+          width: auto;
+
+          button {
+            background-color: #ff7675;
+            color: white;
+
+            &:hover {
+              cursor: pointer;
+              background-color: #d63031;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  width: 6em;
+  font-size: 1em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+}

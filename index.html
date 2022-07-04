@@ -5,6 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro Timer</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="main-area">
+      <div class="main">
+        <div class="main__timer">
+          <div class="circle"></div>
+          <h1 class="clock">--:--</h1>
+          <p class="text">Focus</p>
+        </div>
+        <div class="main__btns">
+          <button class="btn">Play</button>
+          <button class="btn">Reset</button>
+          <button class="btn">Settings</button>
+          <!-- <button class="btn">Play</button> -->
+        </div>
+        <div class="main__modal">
+          <div>
+            <p class="focus-time">Focus Time:</p>
+            <button class="edit btn">Edit</button>
+          </div>
+          <div>
+            <p class="short-interval">Short Break:</p>
+            <button class="edit btn">Edit</button>
+          </div>
+          <div>
+            <p class="long-break">Long Break:</p>
+            <button class="edit btn">Edit</button>
+          </div>
+          <div>
+            <button class="close btn">Close</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
