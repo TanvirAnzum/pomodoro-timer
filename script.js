@@ -4,7 +4,6 @@ const clock = document.querySelector(".clock");
 const btns = document.querySelectorAll(".btn");
 const text = document.querySelector(".text");
 const modal = document.querySelector(".main__modal");
-console.log(btns);
 
 ///pomodoro
 
@@ -20,12 +19,15 @@ const pomodoro = {
 const a = document.querySelector(".long-break");
 const b = document.querySelector(".short-interval");
 const c = document.querySelector(".focus-time");
-const edit_btns = document.querySelectorAll(".edit");
 const close_modal = document.querySelector(".close");
 
-a.textContent += " " + (pomodoro.longInterval / 60).toFixed(1) + " Min";
-b.textContent += " " + (pomodoro.shortInterval / 60).toFixed(1) + " Min";
-c.textContent += " " + (pomodoro.workTime / 60).toFixed(1) + " Min";
+///disabling input field
+
+a.textContent =
+  "Long Break: " + (pomodoro.longInterval / 60).toFixed(1) + " Min";
+b.textContent =
+  "Short Break: " + (pomodoro.shortInterval / 60).toFixed(1) + " Min";
+c.textContent = "Work Time: " + (pomodoro.workTime / 60).toFixed(1) + " Min";
 
 close_modal.addEventListener("click", () => {
   modal.style.display = "none";
@@ -37,7 +39,7 @@ let shortBreak;
 let longBreak;
 let { getDegree, workTime, shortInterval, longInterval, cycle } = pomodoro;
 
-for (let i = 0; i < btns.length; i++) {
+for (let i = 0; i < 3; i++) {
   btns[i].addEventListener("click", () => {
     if (!i) startTimer();
     else if (i == 1) resetTimer();
@@ -46,6 +48,7 @@ for (let i = 0; i < btns.length; i++) {
 }
 
 function startTimer() {
+  btns[0].disabled = true;
   timer = setInterval(workTimingFunction, 1000);
   text.style.display = "block";
 }
@@ -66,6 +69,7 @@ function workTimingFunction() {
     getDegree = pomodoro.getDegree;
     workTime = pomodoro.workTime;
     text.textContent = "Break";
+    text.style.backgroundColor = "#00d8d6";
     shortBreak = setInterval(sbTimingFunction, 1000);
     return;
   }
@@ -79,11 +83,13 @@ function resetTimer() {
   if (timer) clearInterval(timer);
   if (shortBreak) clearInterval(shortBreak);
   if (longBreak) clearInterval(longBreak);
+  btns[0].disabled = false;
   clock.textContent = "--:--";
   getDegree = pomodoro.getDegree;
   workTime = pomodoro.workTime;
   shortInterval = pomodoro.shortInterval;
   text.style.display = "none";
+  text.style.backgroundColor = "#fdcb6e";
   circle.style.background = `radial-gradient(white 60%, transparent 61%),
     conic-gradient(transparent 0deg 0deg, gainsboro 0deg 360deg),
     conic-gradient(orange 0deg, yellow 90deg, lightgreen 180deg, green)`;
@@ -109,10 +115,12 @@ function sbTimingFunction() {
     cycle--;
     if (!cycle) {
       text.textContent = "Break";
+      text.style.backgroundColor = "#00d8d6";
       longBreak = setInterval(lbTimingFunction, 1000);
       return;
     }
     text.textContent = "Focus";
+    text.style.backgroundColor = "#fdcb6e";
     timer = setInterval(workTimingFunction, 1000);
     // workTime = pomodoro.workTime;
     console.log(cycle);
