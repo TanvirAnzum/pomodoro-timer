@@ -19,6 +19,9 @@
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
     &__timer {
       width: 100%;
@@ -70,10 +73,8 @@
     }
     &__modal {
       position: absolute;
-      width: min(24em, 96%);
+      width: min(24em, 94%);
       height: 30em;
-      top: calc(50% - 15em);
-      left: calc(50% - 12em);
       border-radius: 0.5em;
       background-color: #74b9ff;
       display: none;
@@ -93,7 +94,7 @@
           font-weight: 700;
           width: 90%;
           color: white;
-          font-size: 1.5em;
+          font-size: 1.2em;
           text-align: center;
         }
 
