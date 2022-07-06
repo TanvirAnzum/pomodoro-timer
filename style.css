@@ -93,14 +93,14 @@
   font-size: 1.2em;
   text-align: center;
 }
-.main-area .main__modal div:nth-child(4) {
+.main-area .main__modal div:nth-child(5) {
   width: auto;
 }
-.main-area .main__modal div:nth-child(4) button {
+.main-area .main__modal div:nth-child(5) button {
   background-color: #ff7675;
   color: white;
 }
-.main-area .main__modal div:nth-child(4) button:hover {
+.main-area .main__modal div:nth-child(5) button:hover {
   cursor: pointer;
   background-color: #d63031;
 }

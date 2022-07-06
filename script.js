@@ -19,6 +19,7 @@ const pomodoro = {
 const a = document.querySelector(".long-break");
 const b = document.querySelector(".short-interval");
 const c = document.querySelector(".focus-time");
+const d = document.querySelector(".cycle");
 const close_modal = document.querySelector(".close");
 
 ///disabling input field
@@ -28,6 +29,7 @@ a.textContent =
 b.textContent =
   "Short Break: " + (pomodoro.shortInterval / 60).toFixed(1) + " Min";
 c.textContent = "Work Time: " + (pomodoro.workTime / 60).toFixed(1) + " Min";
+d.textContent = "Cycle: " + pomodoro.cycle;
 
 close_modal.addEventListener("click", () => {
   modal.style.display = "none";
